@@ -169,6 +169,11 @@ browbeat_guest_images:
     url: https://download.cirros-cloud.net/0.5.1/cirros-0.5.1-x86_64-disk.img
     type: qcow2
     convert_to_raw: false
+  cirro6:
+    name: cirro6
+    url: https://download.cirros-cloud.net/0.6.3/cirros-0.6.3-aarch64-disk.img
+    type: qcow2
+    convert_to_raw: false
 
 # DNS Server to add
 dns_server: 8.8.8.8
