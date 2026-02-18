@@ -171,10 +171,15 @@ browbeat_guest_images:
     convert_to_raw: false
   cirro6:
     name: cirro6
-    url: https://download.cirros-cloud.net/0.6.3/cirros-0.6.3-aarch64-disk.img
+    url:  https://download.cirros-cloud.net/0.6.3/cirros-0.6.3-x86_64-disk.img
     type: qcow2
     convert_to_raw: false
-
+  rhel9:
+    name: rhel9
+    url: https://download.eng.pnq.redhat.com/released/rhel-9/RHEL-9/9.4.0/BaseOS/x86_64/images/rhel-guest-image-9.4-20240419.25.x86_64.qcow2
+    type: qcow2
+    convert_to_raw: false
+    
 # DNS Server to add
 dns_server: 8.8.8.8
 
