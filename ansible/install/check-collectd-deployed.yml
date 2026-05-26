@@ -1,0 +1,15 @@
+---
+- name: Check if collectd is deployed
+  hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: Check for collectd statefulset
+      shell: oc -n ospperf get statefulset osp-controlplane-collectd
+      register: collectd_check
+      ignore_errors: true
+      environment:
+        KUBECONFIG: "{{ kubeconfig_path }}"
+
+    - name: Set collectd deployment status
+      set_fact:
+        collectd_deployed: "{{ collectd_check.rc == 0 }}"

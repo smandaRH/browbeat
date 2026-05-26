@@ -1,4 +1,8 @@
 ---
+- name: Check if collectd is deployed
+  import_playbook: check-collectd-deployed.yml
+  when: is_rhoso_deployment
+
 - name: set fact collectd_container
   import_playbook: pre-collectd.yml
   when: not is_rhoso_deployment
@@ -13,4 +17,4 @@
 
 - name: stop collectd on RHOSO ocp workers
   import_playbook: stop-collectd-rhoso.yml
-  when: is_rhoso_deployment
+  when: is_rhoso_deployment and (hostvars['localhost']['collectd_deployed'])
